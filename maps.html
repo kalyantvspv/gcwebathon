@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        body {
+            position : relative,
+        }
+        #mapdisplay {
+            position : absolute ;
+            top: 0px ;
+            width: 100% ;
+            /* background-color: red; */
+            display: none ;
+        }
+        #map {
+      height: 400px ;
+      width: 100%;
+    }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="d-flex flex-row justify-content-around">
+        <div class="border d-flex flex-column">
+            <h2>pick up location</h2>
+            <button id="pickupchooser">choose on map</button>
+            <label for="pickuplatitude">latitude</label>
+            <input type="text" id="pickuplatitude" disabled>
+            <label for="pickuplongitude">longitude</label>
+            <input type="text" id="pickuplongitude" disabled>
+        </div>
+        <div class="border d-flex flex-column">
+            <h2>delivery location</h2>
+            <button id="deliverychooser">choose on map</button>
+            <label for="deliverylatitude">latitude</label>
+            <input type="text" id="deliverylatitude" disabled>
+            <label for="deliverylongitude">longitude</label>
+            <input type="text" id="deliverylongitude" disabled>
+        </div>
+    </div>
+    <div class="vh-100" id="mapdisplay">
+        <div id="map"></div>
+        <div class="">
+            <button class="d-flex flex-column mx-auto m-2" id="closebutton">proceed</button>
+        </div>
+    </div>
+    <div>
+        <button class="d-flex flex-column mx-auto m-2">submit</button>
+    </div>
+    <script>
+        let pickupchooser = document.getElementById("pickupchooser") ;
+        let deliverychooser = document.getElementById("deliverychooser") ;
+        let mapdisplay = document.getElementById("mapdisplay") ;
+        let closebutton = document.getElementById("closebutton") ;
+        let tochange = "pickup" ;
+        let pickuplat = document.getElementById("pickuplatitude") ;
+        let pickuplng = document.getElementById("pickuplongitude") ;
+        let deliverylat = document.getElementById("deliverylatitude") ;
+        let deliverylng = document.getElementById("deliverylongitude") ;
+        var pickuplatitude = 20.2961 ;
+        var pickuplongitude = 85.8245 ;
+        var deliverylatitude = 20.2961 ;
+        var deliverylongitude = 85.8245 ;
+        pickupchooser.addEventListener("click", () => {
+            mapdisplay.style.display = "block" ;
+            tochange = "pickup" ;
+            initmap() ;
+        })
+        deliverychooser.addEventListener("click", () => {
+            mapdisplay.style.display = "block" ;
+            tochange = "delivery" ;
+            initmap() ;
+        })
+        closebutton.addEventListener("click", () => {
+            mapdisplay.style.display = "none" ;
+            if(tochange == "pickup") {
+                pickuplat.value = pickuplatitude ;
+                pickuplng.value = pickuplongitude ;
+            }
+            else {
+                deliverylat.value = deliverylatitude ;
+                deliverylng.value = deliverylongitude ;
+            }
+        })
+        function initmap() {
+        if(tochange == "pickup") {
+        var map = new google.maps.Map(
+        document.getElementById('map'), {
+          zoom : 8,
+          center : {lat:pickuplatitude, lng:pickuplongitude}
+        }
+        ) ;
+        var marker = new google.maps.Marker({
+        position : {lat : pickuplatitude, lng : pickuplongitude},
+        map : map
+         })
+        google.maps.event.addListener(map, 'click', function(e) {
+        coords = e.latLng ;
+        let a = JSON.stringify(e.latLng.toJSON(), null, 2) ;
+        b = JSON.parse(a) ;
+        pickuplatitude = Number(b.lat) ;
+        pickuplongitude = Number(b.lng) ;
+        marker.setMap(null) ;
+        marker = new google.maps.Marker({
+          position: e.latLng ,
+          map:map
+        })
+      })}
+      else {
+        var map = new google.maps.Map(
+        document.getElementById('map'), {
+          zoom : 8,
+          center : {lat:deliverylatitude, lng:deliverylongitude}
+        }
+        ) ;
+        var marker = new google.maps.Marker({
+        position : {lat : deliverylatitude, lng : deliverylongitude},
+        map : map
+         })
+        google.maps.event.addListener(map, 'click', function(e) {
+        coords = e.latLng ;
+        let a = JSON.stringify(e.latLng.toJSON(), null, 2) ;
+        b = JSON.parse(a) ;
+        deliverylatitude = Number(b.lat) ;
+        deliverylongitude = Number(b.lng) ;
+        marker.setMap(null) ;
+        marker = new google.maps.Marker({
+          position: e.latLng ,
+          map:map
+        })
+      })
+      }
+    }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDnKREga8ZacoWEKx8yKWZDKa3Mna6gTE&callback=initmap">
+  </script>
+</body>
+</html>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="public/css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -36,11 +36,11 @@
             </svg>
 
             <h2>Login</h2>
-            <form action="/" method="post">
+            <form action="/" method="post" onsubmit="(event)=>{event.preventDefault();}">
               <p>Email</p>
-              <input placeholder="Enter Email" type="email"/>
+              <input placeholder="Enter Email" type="email" name="email" />
               <p>Passwrod</p>
-              <input placeholder="Enter Password" type="password"/>
+              <input placeholder="Enter Password" type="password" name="password" />
               <input class="login" type="submit" value="Login"/>
               <p>
                 New user?

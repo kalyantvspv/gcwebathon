@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="public/css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,7 +17,7 @@
       rel="stylesheet"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Omnifood Hero Section</title>
+    <title>Signup page</title>
   </head>
   <body>
     <header>
@@ -36,15 +36,15 @@
             </svg>
 
             <h2>Signup</h2>
-            <form action="" method="post">
+            <form action="/signup" method="post">
               <p>Name</p>
-              <input placeholder="Enter name" type="text" />
+              <input placeholder="Enter name" type="text" name="name"/>
               <p>Email</p>
-              <input placeholder="Enter Email" type="email" />
-              <p>Passwrod</p>
-              <input placeholder="Enter Password" type="password"/>
+              <input placeholder="Enter Email" type="email" name="email" />
+              <p>Password</p>
+              <input placeholder="Enter Password" type="password" name="password"/>
               <p>Confirm Password</p>
-              <input placeholder="Confirm Password" type="password"/>
+              <input placeholder="Confirm Password" type="password"name="confirmpassword" />
               <input class="signup secondsignup" type="submit" value="Sign Up" />
             </form>
           </div>
