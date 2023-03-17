@@ -1,0 +1,11 @@
+.dropdown
+{
+    position: absolute;
+    right:6%;
+}
+
+#carouselExampleCaptions
+{
+    width:50%;
+    margin: auto;
+}
