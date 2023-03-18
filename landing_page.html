@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../public/style.css" />
+    <style>
+      body {
+        background: linear-gradient(
+          132deg,
+          rgba(26, 129, 181, 0.958) 0%,
+          rgba(128, 209, 220, 0.984)
+        );
+        font-family: "Rubik", sans-serif;
+        color: rgba(32, 33, 38, 0.952);
+        font-size: 18px;
+      }
+      h1 {
+        color: aliceblue;
+        font-size: 56px;
+        font-weight: bold;
+      }
+      img {
+        height: 264px;
+        width: auto;
+      }
+      .navbar {
+        background: rgba(32, 33, 38, 0.952);
+        border-radius: 8px;
+      }
+      .link {
+        text-decoration: none;
+        color: aliceblue;
+      }
+      .link:hover,
+      .link:active {
+        cursor: pointer;
+        color: grey;
+        transition: 0.5s;
+      }
+
+      #imagepanel {
+        position: relative;
+      }
+      #showpanel,
+      img {
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+      }
+      #imageblock,
+      img {
+        position: relative;
+      }
+      #leftarrow {
+        position: absolute;
+        top: 10px;
+      }
+      #rightarrow {
+        position: absolute;
+        top: 0px;
+        right: 10px;
+      }
+      .arrow {
+        cursor: pointer;
+      }
+      .navbardown {
+        width: 100%;
+      }
+      p {
+        color: rgba(32, 33, 38, 0.952);
+        margin-top: 0px;
+      }
+
+      .row image{
+         width:100%;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body class="container-md d-flex flex-column">
+    <div class="p-2">
+      <h1>Air Hawk</h1>
+      <ul
+        class="d-flex"
+        style="list-style-type: none; margin: 0px; padding: 0px"
+      >
+        <li class="fs-md-2 fs-5 me-auto">The future of delivery is here!</li>
+        <a
+          link="#"
+          class="link align-self-end border-end border-dark px-2 d-none d-sm-inline"
+        >
+          Register
+        </a>
+        <a link="#" class="link align-self-end px-2 d-none d-sm-inline"
+          >Login</a
+        >
+      </ul>
+    </div>
+    <div style="padding: 0px; margin: 0px" id="navigation">
+      <div
+        class="d-flex d-sm-none bg-primary flex-row-reverse p-2"
+        id="navigationbutton"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="2em"
+          height="2em"
+          fill="currentColor"
+          class="bi bi-list"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+          />
+        </svg>
+      </div>
+      <ul
+        class="navbar d-sm-flex text-light"
+        style="list-style-type: none; padding: 0px; margin-bottom: 24px"
+        id="navigationbar"
+      >
+        <li>
+          <a class="link p-2" link="#">Home</a>
+        </li>
+
+        <li>
+          <a class="link p-2" link="#">Order History</a>
+        </li>
+        <li>
+          <a class="link p-2" href="maps.html">Place order</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="row overflow-hidden gx-3">
+      <div id="informationpart">
+        <div class="carousel">
+          <div class="d-flex flex-column" id="imageblock">
+            <div id="imagepanel" class="mx-auto">
+              <div class="d-flex justify-content-center align-items-center">
+                <img src="https://www.cnet.com/a/img/resize/a72bcf7b88ca1097aa3a1bd1ba490340db2981f4/hub/2022/05/06/25d37ad8-89cc-4c92-b95a-90e581d8282f/dji-mini-3-pro-review-cnet-2.jpg?auto=webp&width=1200" alt="" />
+                <img src="https://cdn1.expresscomputer.in/wp-content/uploads/2020/05/05121112/Drones-fighting-Covid-19.jpg" alt="" style="display: none" />
+                <img src="https://www.howtogeek.com/wp-content/uploads/2022/04/drone-face-woods.jpg?height=200p&trim=2,2,2,2&crop=16:9" alt="" style="display: none" />              </div>
+              <div class="d-flex" id="showpanel">
+                <div class="mx-auto d-flex" id="showicons">
+                  <div
+                    class="mx-1"
+                    style="
+                      width: 10px;
+                      height: 10px;
+                      border-radius: 10px;
+                      background-color: white;
+                    "
+                  ></div>
+                  <div
+                    class="mx-1"
+                    style="
+                      width: 10px;
+                      height: 10px;
+                      border-radius: 10px;
+                      background-color: black;
+                    "
+                  ></div>
+                  <div
+                    class="mx-1"
+                    style="
+                      width: 10px;
+                      height: 10px;
+                      border-radius: 10px;
+                      background-color: black;
+                    "
+                  ></div>
+                  <div
+                    class="mx-1"
+                    style="
+                      width: 10px;
+                      height: 10px;
+                      border-radius: 10px;
+                      background-color: black;
+                    "
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <div
+              id="leftarrow"
+              class="d-flex align-items-center"
+              style="height: 100%"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="2em"
+                height="2em"
+                fill="currentColor"
+                class="arrow bi bi-arrow-left-circle-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"
+                />
+              </svg>
+            </div>
+            <div
+              id="rightarrow"
+              class="d-flex align-items-center"
+              style="height: 100%"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="2em"
+                height="2em"
+                fill="currentColor"
+                class="arrow bi bi-arrow-right-circle-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          The new cutting-edge drone technology is here to make deliveries more
+          fast,safe and reliable. It aims to revolutionize delivery,skip traffic
+          and directly delivers from sky to your doorstep,with speed and
+          precision. So,now no more waiting for you package,let our drones
+          deliver on time,every time.
+        </p>
+      </div>
+    </div>
+    <div class="navbar down mt-auto p-2 text-muted">@EEDroneService</div>
+    <script>
+      const menubutton = document.getElementById("navigationbutton");
+      let menutoggle = false;
+      const menubar = document.getElementById("navigationbar");
+
+      menubutton.addEventListener("click", () => {
+        if (!menutoggle) {
+          menubar.style.display = "block";
+          menutoggle = true;
+        } else {
+          menubar.style.display = "none";
+          menutoggle = false;
+        }
+      });
+
+      let pallettout = false;
+      sidepallettelements = document.getElementById("sidepallettelements");
+
+      let officialsbutton = document.getElementById("sidepallett");
+      officialsbutton.addEventListener("click", () => {
+        if (!pallettout) {
+          sidepallettelements.className = "bg-primary d-flex flex-column";
+          pallettout = true;
+        } else {
+          sidepallettelements.className = "d-none";
+          pallettout = false;
+        }
+      });
+
+      window.onresize = () => {
+        if (window.innerWidth >= 720) menubar.style.display = "block";
+        else menubar.style.display = "none";
+      };
+    </script>
+    <script>
+      let panel = document.getElementById("informationpart");
+      let leftarrow = document.getElementById("leftarrow");
+      let rightarrow = document.getElementById("rightarrow");
+      let panelwidth = panel.clientWidth;
+      let panelheight = (panelwidth * 2) / 4;
+      let images = document.querySelectorAll("#imagepanel img");
+      let showicons = document.querySelectorAll("#showicons div");
+      window.addEventListener("resize", () => {
+        let panelwidth = panel.clientWidth;
+        let panelheight = (panelwidth * 2) / 4;
+        document.getElementById("imagepanel").style.height = `${panelheight}px`;
+      });
+      let count = images.length;
+      let current = 0;
+      function imagehandling() {
+        if (current + 1 == count) {
+          images[current].style.display = "none";
+          showicons[current].style.backgroundColor = "black";
+          current = 0;
+          images[current].style.display = "block";
+          showicons[current].style.backgroundColor = "white";
+        } else {
+          images[current].style.display = "none";
+          showicons[current].style.backgroundColor = "black";
+          current = current + 1;
+          images[current].style.display = "block";
+          showicons[current].style.backgroundColor = "white";
+        }
+      }
+      document.getElementById("imagepanel").style.height = `${panelheight}px`;
+      window.setInterval(imagehandling, 6000);
+      rightarrow.addEventListener("click", imagehandling);
+      leftarrow.addEventListener("click", () => {
+        if (current - 1 == -1) {
+          images[current].style.display = "none";
+          showicons[current].style.backgroundColor = "black";
+          current = images.length - 1;
+          images[current].style.display = "block";
+          showicons[current].style.backgroundColor = "white";
+        } else {
+          images[current].style.display = "none";
+          showicons[current].style.backgroundColor = "black";
+          current = current - 1;
+          images[current].style.display = "block";
+          showicons[current].style.backgroundColor = "white";
+        }
+      });
+    </script>
+  </body>
+</html>
