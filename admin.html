@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <title>Dashboard</title>
     <style>
         *{
@@ -19,9 +18,6 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary" style="position: fixed;width:100vw; z-index: 10;top: 0;">
         <div class="container-fluid ">
-            <a class="navbar-brand" href="#">
-                <img src="./public/css/drone.jpg" alt="Bootstrap" width="30" height="24">
-              </a>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
               <li class="nav-item">
@@ -31,120 +27,32 @@
                 <a class="nav-link" href="#products">Products</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#orders">Orders</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="#delivery">Delivery</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#collection">Collections</a>
               </li>
           </div>
         </div>
       </nav>
 
-      <section id="products">
-        <h1>My products</h1>
-        <div class="container d-flex">
-        <div class="card" style="width: 18rem;">
-            <img src="./public/css/drone.jpg" class="card-img-top" alt="This is an image">
-            <div class="card-body">
-              <h5 class="card-title">Drone-1</h5>
-              <a href="#" class="btn btn-outline-primary">Check Availability</a>
-            </div>
-          </div>
-          <div class="card mx-5" style="width: 18rem;">
-            <img src="./public/css/drone.jpg" class="card-img-top" alt="This is an image">
-            <div class="card-body">
-              <h5 class="card-title">Drone-2</h5>
-              <a href="#" class="btn btn-outline-primary">Check Availability</a>
-            </div>
-          </div>
-          <div class="card mx-5" style="width: 18rem;">
-            <img src="./public/css/drone.jpg" class="card-img-top" alt="This is an image">
-            <div class="card-body">
-              <h5 class="card-title">Drone-3</h5>
-              <a href="#" class="btn btn-outline-primary">Check Availability</a>
-            </div>
-          </div>
-        </div>
-        <div class="container d-flex my-5">
-            <div class="card mx-5" style="width: 18rem;">
-                <img src="./public/css/drone.jpg" class="card-img-top" alt="This is an image">
-                <div class="card-body">
-                  <h5 class="card-title">Drone-4</h5>
-                  <a href="#" class="btn btn-outline-primary">Check Availability</a>
-                </div>
-              </div>
-              <div class="card mx-5" style="width: 18rem;">
-                <img src="./public/css/drone.jpg" class="card-img-top" alt="This is an image">
-                <div class="card-body">
-                  <h5 class="card-title">Drone-5</h5>
-                  <a href="#" class="btn btn-outline-primary">Check Availability</a>
-                </div>
-              </div>
-            </div>
-      </section>
-      <section id="orders">
-        <h1>Orders</h1>
-        <div class="container d-flex">
-            <div class="card" style="width: 18rem;">
-                <img src="./public/css/drone.jpg" class="card-img-top" alt="This is an image">
-                <div class="card-body">
-                  <h5 class="card-title">Drone Order</h5>
-                  <h5 class="card-text">I need Drone-4</h5>
-                  <p class="card-text">Address-1 to Address-2</p>
-                  <a href="#" class="btn btn-primary">Accept</a>
-                  <a href="#" class="btn btn-outline-primary">Reject</a>
-                </div>
-              </div>
-              <div class="card mx-5" style="width: 18rem;">
-                <img src="./public/css/drone.jpg" class="card-img-top" alt="This is an image">
-                <div class="card-body">
-                  <h5 class="card-title">Drone Order</h5>
-                  <h5 class="card-text">I need Drone-1</h5>
-                  <p class="card-text">Address-1 to Address-2</p>
-                  <a href="#" class="btn btn-primary">Accept</a>
-                  <a href="#" class="btn btn-outline-primary">Reject</a>
-                </div>
-              </div>
-              <div class="card mx-5" style="width: 18rem;">
-                <img src="./public/css/drone.jpg" class="card-img-top" alt="This is an image">
-                <div class="card-body">
-                  <h5 class="card-title">Drone Order</h5>
-                  <h5 class="card-text">I need Drone-2</h5>
-                  <p class="card-text">Address-1 to Address-2</p>
-                  <a href="#" class="btn btn-primary">Accept</a>
-                  <a href="#" class="btn btn-outline-primary">Reject</a>
-                </div>
-              </div>
-            </div>
-            <div class="container d-flex my-5">
-                <div class="card mx-5" style="width: 18rem;">
-                    <img src="./public/css/drone.jpg" class="card-img-top" alt="This is an image">
-                    <div class="card-body">
-                      <h5 class="card-title">Drone Order</h5>
-                      <h5 class="card-text">I need Drone-3</h5>
-                      <p class="card-text">Address-1 to Address-2</p>
-                      <a href="#" class="btn btn-primary">Accept</a>
-                      <a href="#" class="btn btn-outline-primary">Reject</a>
-                    </div>
-                  </div>
-                  <div class="card mx-5" style="width: 18rem;">
-                    <img src="./public/css/drone.jpg" class="card-img-top" alt="This is an image">
-                    <div class="card-body">
-                      <h5 class="card-title">Drone Order</h5>
-                      <h5 class="card-text">I need Drone-5</h5>
-                      <p class="card-text">Address-1 to Address-2</p>
-                      <a href="#" class="btn btn-primary">Accept</a>
-                      <a href="#" class="btn btn-outline-primary">Reject</a>
-                    </div>
-                  </div>
-                </div>
-        </section>
-      <section id="delivery">
-    </section>
-    <section id="collections">
-    </section>
+      <div id="tochange"></div>
+      
+      <script>
+        fetch("http://localhost:3000/results")
+        .then(response => response.json())
+         .then((response)=>{
+             console.log(response)
+            var element = document.getElementById("tochange");
+            tn = ` <h1>Registered Users</h1>`;
+            element.innerHTML+=tn;
+            for (var i in response){
+            template = `
+                          <h2>User Name ${response[i].name}</h2>
+                          <p>contact info : ${response[i].email}</p>
+                        `
+            element.innerHTML+=template;
+            }
+            })
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
 </body>
 </html>

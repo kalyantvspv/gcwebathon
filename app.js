@@ -75,6 +75,21 @@ app.post("/",(req,res)=>{
     res.send();
 })
 
+app.get("/results",(req,res)=>{
+    connection.query("select * from users",(err,response)=>{
+        if(err) console.log(err);
+        else res.send(response);
+    })
+})
+
+app.get("/admin",(req,res)=>{
+    res.sendFile(__dirname+"/adminlogin.html");
+})
+
+app.post("/admin",(req,res)=>{
+    res.sendFile(__dirname+"/admin.html");
+})
+
 app.listen(3000,(err)=>{
     if(err) console.log(err)
     else console.log('started!')
